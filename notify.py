@@ -13,7 +13,7 @@ else:
 while True:
   for route, time in gtfs.get(1820, [13, 6]):
     if datetime.utcnow() + dt > time:
-      print(gtfs.show(time) + route)
+      print(gtfs.show(time) + "\t" + route)
       if cmd:
         os.system(cmd.replace("{}", route + ": " + gtfs.show(time)))
       sys.exit(0)

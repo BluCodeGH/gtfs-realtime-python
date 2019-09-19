@@ -50,7 +50,6 @@ def get(stop, routes=None):
 def main():
   # print stop times for routes 6 and 13 at stop 1820
   for route, time in get(1820, [6, 13]):
-    time -= timedelta(hours=4)
     print(show(time) + "\t" + route)
 
 def show(time):
