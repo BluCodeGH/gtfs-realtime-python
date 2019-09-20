@@ -26,7 +26,8 @@ def fetch():
   feed = gtfs.FeedMessage.FromString(r.content) # pylint: disable=E1101
 
 def get(stop, routes=None):
-  fetch()
+  if feed is None:
+    fetch()
   stop = stops[str(stop)]
   if routes is not None:
     if not isinstance(routes, list):

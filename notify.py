@@ -11,6 +11,7 @@ else:
   cmd = None
 
 while True:
+  gtfs.fetch()
   for route, time in gtfs.get(1820, [13, 6]):
     if datetime.utcnow() + dt > time:
       print(gtfs.show(time) + "\t" + route)
